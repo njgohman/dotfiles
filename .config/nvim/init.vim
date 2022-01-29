@@ -26,10 +26,20 @@ Plug 'hashivim/vim-terraform'
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Ledger
+Plug 'ledger/vim-ledger'
+
 call plug#end()
 
 " Display friendly cat
 echo ">^.^<"
+
+" Default indent settings
+set autoindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 " Enable true color
 if exists('+termguicolors')
@@ -50,6 +60,7 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>gf :GFiles<cr>
 nnoremap <leader>ag :Ag<cr>
+nnoremap <leader>bf :Buffers<cr>
 
 " tagbar toggle
 nnoremap <F8> :TagbarToggle<CR>
