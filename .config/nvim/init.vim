@@ -8,10 +8,12 @@ Plug 'arcticicestudio/nord-vim'
 " gc to comment a visual block
 Plug 'tpope/vim-commentary'
 
-Plug 'tpope/vim-fugitive'  " git for vim
-
 " linting
 Plug 'dense-analysis/ale'
+
+Plug 'tpope/vim-fugitive'  " git for vim
+Plug 'tpope/vim-surround'  " surround support
+Plug 'tpope/vim-repeat'
 
 " tagbar
 Plug 'preservim/tagbar'
@@ -20,14 +22,23 @@ Plug 'preservim/tagbar'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'junegunn/goyo.vim'  " Distraction free writing
+Plug 'junegunn/limelight.vim'
+
 " Terraform
 Plug 'hashivim/vim-terraform'
 
-" COC
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Ledger
 Plug 'ledger/vim-ledger'
+
+" LSP configuration
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 call plug#end()
 
@@ -53,20 +64,25 @@ colorscheme nord
 set number
 set relativenumber
 set shiftround
+set cursorline
 
 " leader mappings
 let mapleader = ","
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>gf :GFiles<cr>
-nnoremap <leader>ag :Ag<cr>
-nnoremap <leader>bf :Buffers<cr>
+nnoremap <leader>ev <cmd>e $MYVIMRC<cr>
+nnoremap <leader>sv <cmd>source $MYVIMRC<cr>
+nnoremap <leader>gf <cmd>GFiles<cr>
+nnoremap <leader>ag <cmd>Ag<cr>
+noremap <leader>bf <cmd>Buffers<cr>
+nnoremap <leader>go <cmd>Tex<cr>
 
 " tagbar toggle
-nnoremap <F8> :TagbarToggle<CR>
+nnoremap <F8> <cmd>TagbarToggle<CR>
 
 " tags setup
 set tags=tags
 
-" execute different modules
-runtime coc.vim
+" autocompletion options
+set completeopt=menu,menuone,noselect
+
+" run lsp configuration
+runtime lsp.lua
