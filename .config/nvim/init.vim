@@ -4,6 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'mvpopuk/inspired-github.vim'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 " vim commentary 
 " gcc to toggle comment on a line,
@@ -27,9 +29,6 @@ Plug 'preservim/tagbar'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'junegunn/goyo.vim'  " Distraction free writing
-Plug 'junegunn/limelight.vim'
-
 " Terraform
 Plug 'hashivim/vim-terraform'
 
@@ -47,6 +46,10 @@ Plug 'saadparwaiz1/cmp_luasnip'
 
 " Indent guides
 Plug 'lukas-reineke/indent-blankline.nvim'
+
+" Floaterm
+Plug 'voldikss/vim-floaterm'
+
 
 call plug#end()
 
@@ -68,7 +71,7 @@ set tabstop=4
 " endif
 set termguicolors
 " Theme
-colorscheme github_dimmed
+colorscheme onedark
 
 set number
 set relativenumber
@@ -98,6 +101,11 @@ nnoremap <F8> <cmd>TagbarToggle<CR>
 
 " tags setup
 set tags=tags
+
+" hide the statusline
+set laststatus=0
+" but show the tabline
+set showtabline=2
 
 " autocompletion options
 set completeopt=menu,menuone,noselect
