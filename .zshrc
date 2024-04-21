@@ -28,8 +28,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=/opt/homebrew/opt/mysql-client/bin:$PATH
 export XDG_CONFIG_HOME=/Users/gohmann/.config
-
-[ -f "/Users/gohmann/.ghcup/env" ] && source "/Users/gohmann/.ghcup/env" # ghcup-env
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/gohmann/.rd/bin:$PATH"

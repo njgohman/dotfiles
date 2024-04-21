@@ -1,5 +1,6 @@
 local lsp_zero = require('lsp-zero')
 local navic = require('nvim-navic')
+local lspconfig = require('lspconfig')
 
 lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
@@ -8,12 +9,13 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 -- here you can setup the language servers
-require('lspconfig').pyright.setup({})
-require('lspconfig').lua_ls.setup({})
-require('lspconfig').terraformls.setup({})
-require('lspconfig').gopls.setup({})
-require('lspconfig').vuels.setup({})
-require('lspconfig').intelephense.setup{}
+lspconfig.pyright.setup({})
+lspconfig.lua_ls.setup({})
+lspconfig.terraformls.setup({})
+lspconfig.gopls.setup({})
+lspconfig.vuels.setup({})
+lspconfig.intelephense.setup({})
+lspconfig.tsserver.setup({})
 
 navic.setup {
     lsp = {
