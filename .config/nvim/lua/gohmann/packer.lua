@@ -13,18 +13,14 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-      'rose-pine/neovim',
-      as = 'rose-pine',
-      config = function()
-          vim.cmd('colorscheme rose-pine')
-      end
-  })
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('theprimeagen/harpoon')
   use('tpope/vim-fugitive')
   use('tpope/vim-commentary')
+  use('rstacruz/vim-closer')
+  use('tpope/vim-endwise')
   use('justinmk/vim-sneak')
   use('lukas-reineke/indent-blankline.nvim')
 
@@ -43,6 +39,20 @@ return require('packer').startup(function(use)
 		  {'hrsh7th/cmp-nvim-lsp'},
 		  {'L3MON4D3/LuaSnip'},
 	  }
+  }
+  use {
+      "SmiteshP/nvim-navic",
+      requires = "neovim/nvim-lspconfig"
+  }
+
+  use {'mfussenegger/nvim-dap'}
+  use {'nvim-telescope/telescope-dap.nvim', requires = {"mfussenegger/nvim-dap"} }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+  use {'leoluz/nvim-dap-go', requires = {"mfussenegger/nvim-dap"}}
+
+  use {
+      "nvim-telescope/telescope-file-browser.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
 
 end)
