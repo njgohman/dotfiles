@@ -1,9 +1,1 @@
 *
-!/.gitignore
-!/README.md
-!/.tmux.conf
-!/.config
-/.config/*
-!/.config/nvim/
-!/.config/nvim/**
-/.config/nvim/plugin
