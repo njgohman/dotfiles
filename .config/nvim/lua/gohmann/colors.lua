@@ -1,2 +1,2 @@
 vim.cmd("colorscheme everforest")
-vim.g.everforest_background = 'soft'
+vim.g.everforest_background = 'dark'

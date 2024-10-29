@@ -4,6 +4,8 @@ Setup for my development environment using neovim, tmux, and iterm.
 
 ## Neovim
 
+### Plugin management
+
 ### Language servers
 
 - **Python** - [pyright]
